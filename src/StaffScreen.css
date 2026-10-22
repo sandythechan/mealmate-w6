@@ -182,3 +182,43 @@
     grid-row: 1;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .staff-screen {
+    color: #f1f0ed;
+    background: #171717;
+  }
+
+  .staff-tabs {
+    border-bottom-color: #d8d6d1;
+  }
+
+  .staff-tab,
+  .staff-intro a {
+    color: #f1f0ed;
+  }
+
+  .staff-demo {
+    border-color: #d8d6d1;
+  }
+
+  .menu-item,
+  .order-status,
+  .lunch-spend {
+    border-color: #d8d6d1;
+  }
+
+  .menu-item {
+    color: #aaa8a3;
+  }
+
+  .menu-item-selected {
+    color: #e1bd6b;
+    box-shadow: 0 2px 0 #d8d6d1;
+  }
+
+  .menu-item-selected .menu-radio {
+    box-shadow: inset 0 0 0 5px #171717;
+    background: #f1f0ed;
+  }
+}

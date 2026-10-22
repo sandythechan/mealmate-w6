@@ -13,3 +13,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #171717;
+  }
+}
