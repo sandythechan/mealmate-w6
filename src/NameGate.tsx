@@ -37,6 +37,11 @@ function NameGate({ onContinue }: NameGateProps) {
           <button type="submit">Continue</button>
         </form>
       </section>
+
+      <footer className="name-gate-footer">
+        <span>FULL NAME: Chan Ka Yu</span>
+        <span>UID: 3036222185</span>
+      </footer>
     </main>
   )
 }

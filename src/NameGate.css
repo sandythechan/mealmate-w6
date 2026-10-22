@@ -1,4 +1,6 @@
 .name-gate {
+  display: flex;
+  flex-direction: column;
   width: min(100%, 504px);
   min-height: 100svh;
   box-sizing: border-box;
@@ -110,9 +112,26 @@
   outline-offset: 4px;
 }
 
+.name-gate-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 32px;
+  color: #6f6f6f;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
 @media (max-width: 560px) {
   .name-gate {
     padding: 24px 20px 36px;
+  }
+
+  .name-gate-footer {
+    flex-direction: column;
+    gap: 4px;
   }
 }
 
@@ -128,6 +147,10 @@
 
   .name-gate-tab {
     color: #f1f0ed;
+  }
+
+  .name-gate-footer {
+    color: #a9a7a2;
   }
 
   .name-gate-content input {
