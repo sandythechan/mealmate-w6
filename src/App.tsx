@@ -1,7 +1,7 @@
-import StaffScreen from './StaffScreen'
+import AdminScreen from './AdminScreen'
 
 function App() {
-  return <StaffScreen />
+  return <AdminScreen />
 }
 
 export default App

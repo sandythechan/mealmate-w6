@@ -1,0 +1,202 @@
+.admin-screen {
+  width: min(100%, 504px);
+  min-height: 100svh;
+  box-sizing: border-box;
+  padding: 30px 36px 44px;
+  color: #171717;
+  background: #f8f7f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.admin-header strong {
+  font-size: 23px;
+  letter-spacing: -0.5px;
+}
+
+.admin-header span,
+.publish-section h1,
+.admin-menu h2 {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+
+.admin-header span {
+  font-size: 14px;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid #292929;
+  padding: 0 20px 12px;
+}
+
+.admin-tab {
+  color: #171717;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.admin-tab-active {
+  font-weight: 500;
+}
+
+.publish-section {
+  margin-top: 25px;
+}
+
+.publish-section h1,
+.admin-menu h2 {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.publish-form {
+  display: grid;
+  gap: 9px;
+  padding: 17px 15px 19px;
+  border: 1px solid #242424;
+  border-radius: 15px;
+}
+
+.publish-form label {
+  font-size: 14px;
+}
+
+.publish-form input {
+  width: 100%;
+  min-height: 41px;
+  box-sizing: border-box;
+  padding: 0 13px;
+  border: 1px solid #242424;
+  border-radius: 10px;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 16px;
+}
+
+.publish-form input::placeholder {
+  color: #999;
+}
+
+.publish-form button {
+  min-height: 35px;
+  margin-top: 5px;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+}
+
+.admin-menu {
+  margin-top: 31px;
+}
+
+.admin-menu-list {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-menu-item,
+.orders-today {
+  border: 1px solid #242424;
+  border-radius: 15px;
+}
+
+.admin-menu-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px 22px;
+  align-items: center;
+  min-height: 58px;
+  box-sizing: border-box;
+  padding: 7px 14px;
+}
+
+.admin-menu-item > div:first-child {
+  display: grid;
+  gap: 2px;
+}
+
+.admin-menu-item strong {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.admin-menu-item span {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.ordered-count {
+  display: grid;
+  justify-items: end;
+  gap: 1px;
+}
+
+.ordered-count strong {
+  font-family: 'Courier New', monospace;
+  font-size: 17px;
+}
+
+.ordered-count span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+}
+
+.remove-dish {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.orders-today {
+  margin: 13px 0 0;
+  padding: 17px 14px;
+  font-size: 16px;
+}
+
+@media (max-width: 560px) {
+  .admin-screen {
+    padding: 24px 20px 36px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .admin-screen {
+    color: #f1f0ed;
+    background: #171717;
+  }
+
+  .admin-tabs {
+    border-bottom-color: #d8d6d1;
+  }
+
+  .admin-tab {
+    color: #f1f0ed;
+  }
+
+  .publish-form,
+  .publish-form input,
+  .admin-menu-item,
+  .orders-today {
+    border-color: #d8d6d1;
+  }
+
+  .publish-form button {
+    color: #777;
+  }
+}
