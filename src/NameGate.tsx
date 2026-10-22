@@ -1,9 +1,14 @@
 import type { FormEvent } from 'react'
 import './NameGate.css'
 
-function NameGate() {
+type NameGateProps = {
+  onContinue: () => void
+}
+
+function NameGate({ onContinue }: NameGateProps) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    onContinue()
   }
 
   return (
