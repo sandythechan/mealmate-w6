@@ -1,0 +1,146 @@
+.name-gate {
+  width: min(100%, 504px);
+  min-height: 100svh;
+  box-sizing: border-box;
+  padding: 30px 36px 44px;
+  color: #171717;
+  background: #f8f7f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.name-gate-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.name-gate-header strong {
+  font-size: 23px;
+  letter-spacing: -0.5px;
+}
+
+.name-gate-header span {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.name-gate-tabs {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid #292929;
+  padding: 0 20px 12px;
+}
+
+.name-gate-tab {
+  color: #171717;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.name-gate-tab-active {
+  font-weight: 500;
+}
+
+.name-gate-content {
+  margin-top: 30px;
+}
+
+.name-gate-content h1 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.name-gate-content p {
+  max-width: 255px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.name-gate-content form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+}
+
+.name-gate-content label {
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.name-gate-content input {
+  width: 100%;
+  min-height: 37px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 1px solid #242424;
+  border-radius: 5px;
+  color: #171717;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+}
+
+.name-gate-content input::placeholder {
+  color: #a3a3a3;
+}
+
+.name-gate-content input:focus-visible {
+  outline: 2px solid #171717;
+  outline-offset: 2px;
+}
+
+.name-gate-content button {
+  align-self: center;
+  margin-top: 18px;
+  padding: 0;
+  border: 0;
+  color: #171717;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.name-gate-content button:focus-visible {
+  outline: 2px solid #171717;
+  outline-offset: 4px;
+}
+
+@media (max-width: 560px) {
+  .name-gate {
+    padding: 24px 20px 36px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .name-gate {
+    color: #f1f0ed;
+    background: #171717;
+  }
+
+  .name-gate-tabs {
+    border-bottom-color: #d8d6d1;
+  }
+
+  .name-gate-tab {
+    color: #f1f0ed;
+  }
+
+  .name-gate-content input {
+    border-color: #d8d6d1;
+    color: #f1f0ed;
+  }
+
+  .name-gate-content button,
+  .name-gate-content input:focus-visible {
+    outline-color: #f1f0ed;
+  }
+
+  .name-gate-content button {
+    color: #f1f0ed;
+  }
+}

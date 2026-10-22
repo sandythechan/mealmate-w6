@@ -1,7 +1,7 @@
-import AdminScreen from './AdminScreen'
+import NameGate from './NameGate'
 
 function App() {
-  return <AdminScreen />
+  return <NameGate />
 }
 
 export default App
