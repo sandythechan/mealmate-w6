@@ -1,12 +1,16 @@
 import './StaffScreen.css'
 
+type StaffScreenProps = {
+  onAdminSelect: () => void
+}
+
 const menuItems = [
   { name: 'Grilled Chicken Wrap', price: '$9.50', selected: false },
   { name: 'Caesar Salad', price: '$8.00', selected: true },
   { name: 'Falafel Bowl', price: '$8.50', selected: false },
 ]
 
-function StaffScreen() {
+function StaffScreen({ onAdminSelect }: StaffScreenProps) {
   return (
     <main className="staff-screen">
       <header className="staff-header">
@@ -18,7 +22,14 @@ function StaffScreen() {
         <a className="staff-tab staff-tab-active" href="#staff">
           Staff
         </a>
-        <a className="staff-tab" href="#admin">
+        <a
+          className="staff-tab"
+          href="#admin"
+          onClick={(event) => {
+            event.preventDefault()
+            onAdminSelect()
+          }}
+        >
           Admin
         </a>
       </nav>
