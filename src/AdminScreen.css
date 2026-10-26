@@ -89,13 +89,27 @@
 }
 
 .publish-form button {
-  min-height: 35px;
+  min-height: 43px;
   margin-top: 5px;
-  border: 0;
-  color: #fff;
-  background: transparent;
+  border: 1px solid #171717;
+  border-radius: 10px;
+  color: #f8f7f5;
+  background: #171717;
   font: inherit;
   font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.publish-form button:hover {
+  color: #171717;
+  background: transparent;
+}
+
+.publish-form button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 .admin-menu {
@@ -218,6 +232,13 @@
   }
 
   .publish-form button {
-    color: #777;
+    border-color: #f1f0ed;
+    color: #171717;
+    background: #f1f0ed;
+  }
+
+  .publish-form button:hover {
+    color: #f1f0ed;
+    background: transparent;
   }
 }
