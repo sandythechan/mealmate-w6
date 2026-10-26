@@ -4,19 +4,23 @@ import NameGate from './NameGate'
 import StaffScreen from './StaffScreen'
 
 function App() {
-  const [screen, setScreen] = useState<'name-gate' | 'staff' | 'admin'>(
-    'name-gate',
-  )
+  const [name, setName] = useState(() => localStorage.getItem('mealmate-name') ?? '')
+  const [screen, setScreen] = useState<'staff' | 'admin'>('staff')
 
-  if (screen === 'name-gate') {
-    return <NameGate onContinue={() => setScreen('staff')} />
+  const handleNameSubmit = (submittedName: string) => {
+    localStorage.setItem('mealmate-name', submittedName)
+    setName(submittedName)
+  }
+
+  if (!name) {
+    return <NameGate onContinue={handleNameSubmit} />
   }
 
   if (screen === 'admin') {
     return <AdminScreen onStaffSelect={() => setScreen('staff')} />
   }
 
-  return <StaffScreen onAdminSelect={() => setScreen('admin')} />
+  return <StaffScreen name={name} onAdminSelect={() => setScreen('admin')} />
 }
 
 export default App

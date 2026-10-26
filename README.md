@@ -1,32 +1,51 @@
-# React + TypeScript + Vite
+# MealMate
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+MealMate uses a React client and a Cloudflare Worker backed by KV for one shared
+menu and shared active orders. The staff name is stored only in the browser's
+`localStorage` until an order is submitted.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Install dependencies and build the client:
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+npm install
+npm run build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The KV namespace is bound as `ORDERS` in `wrangler.jsonc`. To create a new
+namespace instead, run:
+
+```sh
+npx wrangler kv namespace create ORDERS
+```
+
+Replace the namespace `id` in `wrangler.jsonc` with the returned ID. For local
+development, use a KV preview namespace:
+
+```sh
+npx wrangler kv namespace create ORDERS --preview
+npx wrangler dev
+```
+
+In another terminal, run `npm run dev`. Vite proxies `/api` requests to the
+local Worker on port 8787.
+
+Deploy the built app and Worker with:
+
+```sh
+npm run build
+npx wrangler deploy
+```
+
+## API
+
+- `GET /api/state` returns the current menu and orders.
+- `POST /api/menu` adds a dish from `{ "name": string, "price": number }`.
+- `DELETE /api/menu/:id` removes a dish.
+- `POST /api/orders` creates one active order from `{ "staffName": string, "dishId": string }`.
+- `DELETE /api/orders/:id` cancels an active order.
+
+Invalid requests return a JSON `{ "error": string }` response with an
+appropriate 4xx status. Cancelled orders remain in KV history but are excluded
+from counts and admin order details.

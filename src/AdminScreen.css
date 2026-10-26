@@ -169,6 +169,26 @@
   font-size: 16px;
 }
 
+.order-details {
+  margin-top: 31px;
+}
+
+.order-details h2 {
+  margin: 0 0 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.order-details p {
+  margin: 0 0 8px;
+  padding: 12px 14px;
+  border: 1px solid #242424;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
 @media (max-width: 560px) {
   .admin-screen {
     padding: 24px 20px 36px;
@@ -192,7 +212,8 @@
   .publish-form,
   .publish-form input,
   .admin-menu-item,
-  .orders-today {
+  .orders-today,
+  .order-details p {
     border-color: #d8d6d1;
   }
 

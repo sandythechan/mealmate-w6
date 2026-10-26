@@ -147,6 +147,25 @@
   font-size: 18px;
 }
 
+.order-status button {
+  margin-left: auto;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.menu-item[role='button'] {
+  cursor: pointer;
+}
+
+.menu-item[role='button']:focus-visible,
+.order-status button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
 .lunch-spend {
   margin-top: 25px;
   padding: 23px 25px 22px;
