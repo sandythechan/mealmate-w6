@@ -44,8 +44,7 @@
 }
 
 .staff-intro {
-  display: grid;
-  grid-template-columns: 1fr 191px auto;
+  display: flex;
   align-items: center;
   gap: 14px;
   margin-top: 30px;
@@ -61,9 +60,19 @@
   letter-spacing: 2px;
 }
 
-.staff-intro a {
+.staff-intro a,
+.staff-switch-button {
   color: #171717;
   font-size: 14px;
+}
+
+.staff-switch-button {
+  margin-left: auto;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .orders-closed {
@@ -213,7 +222,8 @@
   }
 
   .staff-tab,
-  .staff-intro a {
+  .staff-intro a,
+  .staff-switch-button {
     color: #f1f0ed;
   }
 

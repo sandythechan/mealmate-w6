@@ -53,6 +53,9 @@ function StaffScreen({ name, onAdminSelect }: StaffScreenProps) {
 
       <section className="staff-intro" aria-label="Staff account">
         <span>{name}</span>
+        <button className="staff-switch-button" type="button">
+          Not you?
+        </button>
       </section>
 
       {message && <p className="orders-closed">{message}</p>}
