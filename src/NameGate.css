@@ -98,13 +98,28 @@
 .name-gate-content button {
   align-self: center;
   margin-top: 18px;
-  padding: 0;
-  border: 0;
-  color: #171717;
-  background: transparent;
+  padding: 10px 24px;
+  border: 1px solid #171717;
+  border-radius: 5px;
+  color: #f8f7f5;
+  background: #171717;
   font: inherit;
   font-size: 12px;
+  font-weight: 600;
   cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    transform 120ms ease;
+}
+
+.name-gate-content button:hover {
+  color: #171717;
+  background: transparent;
+}
+
+.name-gate-content button:active {
+  transform: translateY(1px);
 }
 
 .name-gate-content button:focus-visible {
@@ -164,6 +179,13 @@
   }
 
   .name-gate-content button {
+    border-color: #f1f0ed;
+    color: #171717;
+    background: #f1f0ed;
+  }
+
+  .name-gate-content button:hover {
     color: #f1f0ed;
+    background: transparent;
   }
 }
